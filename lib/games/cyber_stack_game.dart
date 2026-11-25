@@ -240,8 +240,6 @@ class CyberStackGame extends FlameGame with TapCallbacks {
       return;
     }
     isPaused = true;
-    _pauseText = _createCenterText('PAUSED', Colors.cyanAccent);
-    add(_pauseText!);
   }
 
   void resumeGame() {
@@ -254,7 +252,7 @@ class CyberStackGame extends FlameGame with TapCallbacks {
   }
 
   void restart() {
-    if (!isGameOver) {
+    if (!isGameOver && !isPaused) {
       return;
     }
 
